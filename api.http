@@ -1,0 +1,22 @@
+### REGISTER USER
+POST http://localhost:3001/user/register
+Content-Type: application/json
+
+{
+    "name": "Martinez",
+    "lastname": "Lamacchia",
+    "email": "example2@example.com",
+    "password": "Zurdo3",
+    "role": "participante",
+    "country": "Argentina",
+    "preferredLanguage": "es"
+}
+
+### LOGIN USER
+POST http://localhost:3001/user/login
+Content-Type: application/json
+
+{
+    "email": "example3@example.com",
+    "password": "Zurdo3"
+}
