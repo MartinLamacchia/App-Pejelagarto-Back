@@ -1,3 +1,5 @@
+/////////////////////////---USER---/////////////////////////////
+
 ### REGISTER USER
 POST http://localhost:3001/user/register
 Content-Type: application/json
@@ -19,4 +21,32 @@ Content-Type: application/json
 {
     "email": "example3@example.com",
     "password": "Zurdo3"
+}
+
+
+/////////////////////////---FISH---/////////////////////////////
+
+### REGISTER FISH
+POST http://localhost:3001/catchFish/registerFish
+Content-Type: application/json
+
+{
+    "participant": "6a97f5ed4b439f941761a0d3",
+    "fiscal": "6a97f851a8aba5f959dff2d6",
+    "species": "Dorado",
+    "length": 0.50,
+    "weight": 3
+}
+
+### REGISTER FISH DUPLICATION
+POST http://localhost:3001/catchFish/registerFish
+Content-Type: application/json
+
+{
+    "participant": "6a97f5ed4b439f941761a0d3",
+    "fiscal": "6a97f851a8aba5f959dff2d6",
+    "species": "Dorado",
+    "length": 0.50,
+    "weight": 3,
+    "confirmDuplicate": true
 }

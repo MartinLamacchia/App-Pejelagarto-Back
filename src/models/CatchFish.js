@@ -27,7 +27,6 @@ const CatchFishSchema = new mongoose.Schema({
     },
     photo: {
         type: String, 
-        required: true
     }
 }, {
     timestamps: true
