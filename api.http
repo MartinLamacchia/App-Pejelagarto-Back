@@ -5,11 +5,11 @@ POST http://localhost:3001/user/register
 Content-Type: application/json
 
 {
-    "name": "Martinez",
-    "lastname": "Lamacchia",
-    "email": "example2@example.com",
+    "name": "Martin",
+    "lastname": "Perez",
+    "email": "example@example.com",
     "password": "Zurdo3",
-    "role": "participante",
+    "role": "fiscal",
     "country": "Argentina",
     "preferredLanguage": "es"
 }
@@ -23,6 +23,16 @@ Content-Type: application/json
     "password": "Zurdo3"
 }
 
+### GET ALL USERS
+GET http://localhost:3001/user/getAllUsers
+
+### GET USER BY ID
+POST http://localhost:3001/user/getUserById
+Content-Type: application/json
+
+{
+    "id": "6a97f5ed4b439f941761a0d3"
+}
 
 /////////////////////////---FISH---/////////////////////////////
 
