@@ -34,6 +34,15 @@ Content-Type: application/json
     "id": "6a97f5ed4b439f941761a0d3"
 }
 
+### DELETE USER
+POST http://localhost:3001/user/deleteUser
+Content-Type: application/json
+
+{
+    "id": "6a97f5ed4b439f941761a0d3"
+}
+
+
 /////////////////////////---FISH---/////////////////////////////
 
 ### REGISTER FISH

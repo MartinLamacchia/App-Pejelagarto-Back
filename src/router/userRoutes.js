@@ -3,10 +3,12 @@ const { controllerRegister } = require('../controllers/users/register')
 const {controllerLogin} = require('../controllers/users/login')
 const {controllerGetAllUsers} = require('../controllers/users/getAllUser')
 const {controllerGetUser} = require('../controllers/users/getUserById')
+const { controllerDeleteUser } = require('../controllers/users/deleteUser')
 
 routesUser.post('/register', controllerRegister)
 routesUser.post('/login', controllerLogin)
 routesUser.get('/getAllUsers', controllerGetAllUsers)
 routesUser.post('/getUserById', controllerGetUser)
+routesUser.post('/deleteUser', controllerDeleteUser)
 
 module.exports = routesUser
