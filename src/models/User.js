@@ -45,11 +45,12 @@ const UserSchema = new mongoose.Schema(
       enum: ["es", "pt-BR", "en"],
       default: "es",
     },
-    // catchFish: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "CatchFish",
-    //   required: true,
-    // },
+    catches: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "CatchFish",
+      },
+    ],
   },
   {
     timestamps: true,

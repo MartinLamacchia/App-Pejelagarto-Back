@@ -31,7 +31,7 @@ POST http://localhost:3001/user/getUserById
 Content-Type: application/json
 
 {
-    "id": "6a97f5ed4b439f941761a0d3"
+    "id": "6a97f851a8aba5f959dff2d6"
 }
 
 ### DELETE USER
@@ -62,10 +62,13 @@ POST http://localhost:3001/catchFish/registerFish
 Content-Type: application/json
 
 {
-    "participant": "6a97f5ed4b439f941761a0d3",
-    "fiscal": "6a97f851a8aba5f959dff2d6",
+    "participant": "6a97f851a8aba5f959dff2d6",
+    "fiscal": "6a9952c91771bf1f6f771649",
     "species": "Dorado",
     "length": 0.50,
     "weight": 3,
     "confirmDuplicate": true
 }
+
+### DELETE MANY FISH
+GET http://localhost:3001/catchFish/deleteManyFish
