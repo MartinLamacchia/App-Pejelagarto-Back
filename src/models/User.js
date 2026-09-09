@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: {
-        values: ["participante", "juez", "fiscal", "administrador"],
+        values: ["fisherman", "judge", "fiscal", "admin"],
         message: "{VALUE} no es un rol válido",
       },
       required: true,
@@ -39,6 +39,10 @@ const UserSchema = new mongoose.Schema(
     country: {
       type: String,
       trim: true,
+    },
+    phone: {
+      type: Number, 
+      required: true
     },
     preferredLanguage: {
       type: String,
