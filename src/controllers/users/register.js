@@ -20,7 +20,7 @@ const controllerRegister = async (req, res) => {
     if (findUser) {
       return res
         .status(400)
-        .json({ message: "El mail o username estan registrado" });
+        .json({ code: "duplicate_user" });
     }
 
     const newUser = await User.create({
@@ -35,7 +35,7 @@ const controllerRegister = async (req, res) => {
     });
 
     res.status(201).json({
-      message: "El usuario esta registrado con exito",
+      code: "register_success",
       success: true,
       newUser,
     });
