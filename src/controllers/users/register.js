@@ -35,7 +35,7 @@ const controllerRegister = async (req, res) => {
     });
 
     res.status(201).json({
-      code: "register_success",
+      code: "register_ok",
       success: true,
       newUser,
     });
