@@ -2,18 +2,19 @@ const User = require("../../models/User");
 
 const controllerLogin = async (req, res) => {
   const { email, password } = req.body;
-
+  
   try {
     const findUser = await User.findOne({ email }).select('+password');
-
+    
     if (!findUser) {
-      return res.status(404).json({ message: "El mail no esta registrado" });
+      return res.status(404).json({ message: "email_incorrect" });
     }
-
+    
     const isPasswordValid = await findUser.comparePassword(password);
-
+    
     if (!isPasswordValid) {
-      return res.status(404).json({ message: "La contraseña no es correcta" });
+
+      return res.status(404).json({ message: "pass_incorrect" });
     }
 
     res.status(200).json({ access: true, findUser });
