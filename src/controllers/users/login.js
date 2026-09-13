@@ -7,14 +7,14 @@ const controllerLogin = async (req, res) => {
     const findUser = await User.findOne({ email }).select('+password');
     
     if (!findUser) {
-      return res.status(404).json({ message: "email_incorrect" });
+      return res.status(404).json({ code: "email_incorrect" });
     }
     
     const isPasswordValid = await findUser.comparePassword(password);
     
     if (!isPasswordValid) {
 
-      return res.status(404).json({ message: "pass_incorrect" });
+      return res.status(404).json({ code: "pass_incorrect" });
     }
 
     res.status(200).json({ access: true, findUser });
