@@ -51,7 +51,7 @@ Content-Type: application/json
 
 {
     "participant": "6a97f5ed4b439f941761a0d3",
-    "fiscal": "6a97f851a8aba5f959dff2d6",
+    "fiscal": "6aaaa7bbdbc60b2e1098b45c",
     "species": "Dorado",
     "length": 0.50,
     "weight": 3
@@ -62,8 +62,8 @@ POST http://localhost:3001/catchFish/registerFish
 Content-Type: application/json
 
 {
-    "participant": "6a97f851a8aba5f959dff2d6",
-    "fiscal": "6a9952c91771bf1f6f771649",
+    "participant": "6aa988dddbc60b2e1098b45b",
+    "fiscal": "6aaaa7bbdbc60b2e1098b45c",
     "species": "Dorado",
     "length": 0.50,
     "weight": 3,
@@ -72,3 +72,6 @@ Content-Type: application/json
 
 ### DELETE MANY FISH
 GET http://localhost:3001/catchFish/deleteManyFish
+
+### GET FISH BY ID
+POST http://localhost:3001/catchFish/getFishById

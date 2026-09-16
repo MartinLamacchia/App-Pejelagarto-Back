@@ -2,10 +2,9 @@ const User = require("../../models/User");
 
 const controllerGetUser = async (req, res) => {
   const { id } = req.body;
-
+  
   try {
     const findUser = await User.findOne({ _id: id })
-    .populate('catches')
 
     if (!findUser) {
       return res.status(404).json({ message: "El usuario no se encontro" });

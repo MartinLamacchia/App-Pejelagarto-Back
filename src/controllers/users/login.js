@@ -4,7 +4,8 @@ const controllerLogin = async (req, res) => {
   const { email, password } = req.body;
   
   try {
-    const findUser = await User.findOne({ email }).select('+password');
+    const findUser = await User.findOne({ email }).select('+password')
+    .populate('catches')
     
     if (!findUser) {
       return res.status(404).json({ code: "email_incorrect" });
