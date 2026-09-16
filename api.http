@@ -75,3 +75,16 @@ GET http://localhost:3001/catchFish/deleteManyFish
 
 ### GET FISH BY ID
 POST http://localhost:3001/catchFish/getFishById
+Content-Type: application/json
+
+{
+    "id": "6aaa8d548234fbada5060cf5"
+}
+
+### GET ALL FISH FOR USER
+POST http://localhost:3001/catchFish/getAllFishForUser
+Content-Type: application/json
+
+{
+    "idUser": "6aa988dddbc60b2e1098b45b"
+}

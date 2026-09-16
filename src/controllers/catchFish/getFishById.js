@@ -1,7 +1,6 @@
 const CatchFish = require("../../models/CatchFish");
 
-const controllerGetFishById = async (req, res) => {
-  const { id } = req.body;
+const controllerGetFishById = async (id) => {  
   
   try {
     const findFish = await CatchFish.findOne({ _id: id })
@@ -11,7 +10,7 @@ const controllerGetFishById = async (req, res) => {
       return res.status(404).json({ message: "El usuario no se encontro" });
     }
 
-    res.status(200).json(findFish);
+    return findFish
   } catch (error) {
     return res.status(500).json({ message: error });
   }
