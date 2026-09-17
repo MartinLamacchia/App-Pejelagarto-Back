@@ -2,11 +2,13 @@ const User = require("../../models/User");
 
 const controllerGetAllUsers = async (req, res) => {
   try {
-
+    
     const allUser = await User.find()
 
     res.status(200).json(allUser);
   } catch (error) {
+    console.log(error.message);
+    
     return res.status(500).json({ message: error.message });
   }
 };
