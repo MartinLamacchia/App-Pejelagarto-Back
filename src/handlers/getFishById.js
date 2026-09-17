@@ -1,6 +1,6 @@
-const CatchFish = require("../../models/CatchFish");
+const CatchFish = require("../models/CatchFish");
 
-const controllerGetFishById = async (id) => {  
+const handlerGetFishById = async (id) => {  
   
   try {
     const findFish = await CatchFish.findOne({ _id: id })
@@ -16,4 +16,4 @@ const controllerGetFishById = async (id) => {
   }
 };
 
-module.exports = { controllerGetFishById };
+module.exports = { handlerGetFishById };

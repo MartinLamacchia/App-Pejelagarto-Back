@@ -1,5 +1,5 @@
 const User = require('../../models/User');
-const { controllerGetFishById } = require('./getFishById');
+const {handlerGetFishById} = require('../../handlers/getFishById')
 
 const controllerGetAllFishForUser = async (req, res) => {
   const { idUser } = req.body;
@@ -12,7 +12,7 @@ const controllerGetAllFishForUser = async (req, res) => {
       return res.status(404).json({ message: "El usuario no se encontro" });
     }
 
-    const promise = findUser.catches.map(id => controllerGetFishById(id))
+    const promise = findUser.catches.map(id => handlerGetFishById(id))
 
     // console.log(promise);
     
