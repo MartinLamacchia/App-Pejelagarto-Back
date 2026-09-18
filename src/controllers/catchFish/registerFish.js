@@ -3,7 +3,7 @@ const User = require('../../models/User')
 
 const controllerRegisterCatch = async (req, res) => {
   const {
-    participant,
+    fisherman,
     fiscal,
     species,
     length,
@@ -13,9 +13,9 @@ const controllerRegisterCatch = async (req, res) => {
   } = req.body;
 
   try {
-    // Buscar si ya existe una captura con las 3 características iguales, para el mismo participante
+    // Buscar si ya existe una captura con las 3 características iguales, para el mismo pescador
     const duplicateCatch = await CatchFish.findOne({
-      participant,
+      fisherman,
       species,
       length,
       weight,
@@ -25,15 +25,15 @@ const controllerRegisterCatch = async (req, res) => {
     if (duplicateCatch && !confirmDuplicate) {
       return res.status(409).json({
         duplicate: true,
-        message:
-          "El participante ya tiene registrada una captura con la misma especie, largo y peso. ¿Desea registrarla igualmente?",
+        code:
+          "El pescador ya tiene registrada una captura con la misma especie, largo y peso. ¿Desea registrarla igualmente?",
         existingCatch: duplicateCatch,
       });
     }
 
     // Si no hay duplicado, o el fiscal ya confirmó, se crea la captura
     const newCatch = await CatchFish.create({
-      participant,
+      fisherman,
       fiscal,
       species,
       length,
@@ -41,18 +41,18 @@ const controllerRegisterCatch = async (req, res) => {
       photo,
     });
 
-    // Se agrega la referencia de la captura al usuario participante
-    await User.findByIdAndUpdate(participant, {
+    // Se agrega la referencia de la captura al usuario pescador
+    await User.findByIdAndUpdate(fisherman, {
       $push: { catches: newCatch._id },
     });
 
     res.status(201).json({
-      message: "Captura registrada con éxito",
+      code: "Captura registrada con éxito",
       success: true,
       newCatch,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ code: error.message });
   }
 };
 
